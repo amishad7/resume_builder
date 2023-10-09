@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
-                color: Colors.black,
+                color: Colors.white,
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(

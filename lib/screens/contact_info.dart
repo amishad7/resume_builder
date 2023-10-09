@@ -177,6 +177,130 @@ class _Contact_infoState extends State<Contact_info> {
               flex: 10,
               child: Container(
                 color: Colors.indigo.shade50,
+                height: double.infinity,
+                width: double.infinity,
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 43),
+                      padding: const EdgeInsets.only(
+                          top: 20, left: 10, right: 10, bottom: 29),
+                      height: MediaQuery.of(context).size.height / 2,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(),
+                        ],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: Colors.blue,
+                                radius: 20,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.height / 17,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue.shade200,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: Colors.blue,
+                                radius: 20,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.height / 17,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue.shade200,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: Colors.blue,
+                                radius: 20,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.height / 17,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue.shade200,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 20,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.height / 17,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue.shade200,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 20,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.height / 17,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue.shade200,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
