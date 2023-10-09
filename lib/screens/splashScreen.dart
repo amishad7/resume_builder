@@ -12,11 +12,14 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 5), () {
-      Navigator.of(context).pushReplacementNamed('home');
-    });
+    Timer(
+      const Duration(seconds: 5),
+      () {
+        Navigator.pushReplacementNamed(context, 'home');
+      },
+    );
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: Container(
         width: double.infinity,
         child: Column(
@@ -34,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'https://i.pinimg.com/originals/d7/ac/8f/d7ac8fe75a93307683db992d9c8c6f8c.gif'),
+                      'https://i.pinimg.com/originals/07/24/88/0724884440e8ddd0896ff557b75a222a.gif'),
                 ),
               ),
             ),

@@ -15,14 +15,14 @@ class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Global.appColor,
         centerTitle: true,
         toolbarHeight: 100,
-        title: const Text(
+        title: Text(
           "Resume ",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Global.TextColor,
             fontSize: 24,
             letterSpacing: 1,
           ),
