@@ -38,7 +38,7 @@ class _homePageState extends State<homePage> {
           Navigator.of(context).pushNamed('builder_options');
         },
         backgroundColor: Global.appColor,
-        child: Icon(
+        child: const Icon(
           CupertinoIcons.add,
           color: Colors.white,
         ),
