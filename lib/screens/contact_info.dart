@@ -1,5 +1,9 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:resume_builder/Global/global.dart';
 
 class Contact_info extends StatefulWidget {
@@ -12,6 +16,8 @@ class Contact_info extends StatefulWidget {
 class _Contact_infoState extends State<Contact_info> {
   @override
   Widget build(BuildContext context) {
+    ImagePicker picker = ImagePicker();
+
     bool showImageOption = false;
     return Scaffold(
       backgroundColor: Global.backGroundColor,
@@ -224,7 +230,7 @@ class _Contact_infoState extends State<Contact_info> {
                                           MediaQuery.of(context).size.height /
                                               17,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
+                                        color: Colors.indigo.shade50,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(10),
                                         ),
@@ -233,9 +239,10 @@ class _Contact_infoState extends State<Contact_info> {
                                         padding: const EdgeInsets.only(
                                             right: 15.0, left: 15),
                                         child: TextFormField(
-                                          onSaved: (val) {},
-                                          cursorColor: Colors.white,
-                                          autocorrect: true,
+                                          onSaved: (val) {
+                                            Global.name = val;
+                                          },
+                                          cursorColor: Colors.grey,
                                           decoration: InputDecoration(
                                             hintText: 'Name',
                                             hintStyle: TextStyle(
@@ -268,7 +275,7 @@ class _Contact_infoState extends State<Contact_info> {
                                           MediaQuery.of(context).size.height /
                                               17,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
+                                        color: Colors.indigo.shade50,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(10),
                                         ),
@@ -278,7 +285,7 @@ class _Contact_infoState extends State<Contact_info> {
                                             right: 15.0, left: 15),
                                         child: TextFormField(
                                           onSaved: (val) {},
-                                          cursorColor: Colors.white,
+                                          cursorColor: Colors.grey,
                                           autocorrect: true,
                                           decoration: InputDecoration(
                                             hintText: 'Phone Number',
@@ -312,7 +319,7 @@ class _Contact_infoState extends State<Contact_info> {
                                           MediaQuery.of(context).size.height /
                                               17,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
+                                        color: Colors.indigo.shade50,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(10),
                                         ),
@@ -323,7 +330,7 @@ class _Contact_infoState extends State<Contact_info> {
                                         child: TextFormField(
                                           keyboardType: TextInputType.name,
                                           onSaved: (val) {},
-                                          cursorColor: Colors.white,
+                                          cursorColor: Colors.grey,
                                           autocorrect: true,
                                           decoration: InputDecoration(
                                             hintStyle: TextStyle(
@@ -352,7 +359,7 @@ class _Contact_infoState extends State<Contact_info> {
                                           MediaQuery.of(context).size.height /
                                               17,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
+                                        color: Colors.indigo.shade50,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(10),
                                         ),
@@ -362,7 +369,7 @@ class _Contact_infoState extends State<Contact_info> {
                                             right: 15.0, left: 15),
                                         child: TextFormField(
                                           onSaved: (val) {},
-                                          cursorColor: Colors.white,
+                                          cursorColor: Colors.grey,
                                           autocorrect: true,
                                           decoration: InputDecoration(
                                             hintText: 'Address Line 2',
@@ -391,7 +398,7 @@ class _Contact_infoState extends State<Contact_info> {
                                           MediaQuery.of(context).size.height /
                                               17,
                                       decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
+                                        color: Colors.indigo.shade50,
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(10),
                                         ),
@@ -401,7 +408,7 @@ class _Contact_infoState extends State<Contact_info> {
                                             right: 15.0, left: 15),
                                         child: TextFormField(
                                           onSaved: (val) {},
-                                          cursorColor: Colors.white,
+                                          cursorColor: Colors.grey,
                                           autocorrect: true,
                                           decoration: InputDecoration(
                                             hintText: 'Address Line 3',
@@ -414,6 +421,12 @@ class _Contact_infoState extends State<Contact_info> {
                                       ),
                                     ),
                                   ],
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    log("${Global.name}");
+                                  },
+                                  child: const Text("Submit"),
                                 ),
                               ],
                             ),
@@ -429,10 +442,10 @@ class _Contact_infoState extends State<Contact_info> {
                             margin: const EdgeInsets.only(top: 43),
                             padding: const EdgeInsets.only(
                                 top: 20, left: 10, right: 10, bottom: 29),
-                            height: MediaQuery.of(context).size.height / 3.7,
+                            height: MediaQuery.of(context).size.height / 2.7,
                             width: MediaQuery.of(context).size.width / 1.2,
                             decoration: const BoxDecoration(
-                              color: Colors.white,
+                              color: Colors.blue,
                               boxShadow: <BoxShadow>[
                                 BoxShadow(),
                               ],
@@ -443,15 +456,30 @@ class _Contact_infoState extends State<Contact_info> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                CircleAvatar(
+                                  backgroundColor: Global.TextColor,
+                                  radius: 83,
+                                  backgroundImage: (Global.image == null)
+                                      ? NetworkImage(
+                                          'https://i.pinimg.com/564x/06/94/ef/0694ef0f25141d2fb24b45c55c22686c.jpg')
+                                      : Image.file(
+                                          File(Global.image!.path),
+                                        ).image,
+                                ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     CircleAvatar(
-                                      radius: 40,
+                                      radius: 34,
                                       backgroundColor: Colors.lightBlue,
                                       child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          Global.image = await picker.pickImage(
+                                            source: ImageSource.camera,
+                                          );
+                                          setState(() {});
+                                        },
                                         icon: const Icon(
                                           CupertinoIcons.photo_camera_solid,
                                           color: Colors.white,
@@ -459,10 +487,15 @@ class _Contact_infoState extends State<Contact_info> {
                                       ),
                                     ),
                                     CircleAvatar(
-                                      radius: 40,
+                                      radius: 34,
                                       backgroundColor: Colors.lightBlue,
                                       child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          Global.image = await picker.pickImage(
+                                            source: ImageSource.gallery,
+                                          );
+                                          setState(() {});
+                                        },
                                         icon: const Icon(
                                           CupertinoIcons.photo,
                                           color: Colors.white,
