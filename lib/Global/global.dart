@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class Global {
   static Color appColor = Colors.blue.shade400;
@@ -10,6 +9,16 @@ class Global {
   static String? name;
   static String? phoneNumber;
   static String? Address;
-  static XFile? image;
-  static Color backGroundColor = Color(0xfff0f0f0);
+  static String? MarritalValue;
+
+  static bool ishindi = false;
+  static bool isEnglish = false;
+  static bool isGujarati = false;
+
+  static String? hindi;
+  static String? gujarati;
+  static String? english;
+
+  //static XFile? image;
+  static Color backGroundColor = Colors.indigo.shade50;
 }

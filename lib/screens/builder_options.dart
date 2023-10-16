@@ -14,7 +14,7 @@ class _Builder_OptionsState extends State<Builder_Options> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff0f0f0),
+      backgroundColor: Global.backGroundColor,
       appBar: AppBar(
         backgroundColor: Global.appColor,
         toolbarHeight: 100,
@@ -78,7 +78,7 @@ class _Builder_OptionsState extends State<Builder_Options> {
                       ...BuildOptions.build.map(
                         (e) {
                           return Container(
-                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            padding: const EdgeInsets.only(left: 10, right: 3),
                             height: MediaQuery.of(context).size.height / 14,
                             decoration: const BoxDecoration(
                               color: Color(0xffffffff),
@@ -86,9 +86,19 @@ class _Builder_OptionsState extends State<Builder_Options> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                const Icon(
-                                  CupertinoIcons.person,
-                                  color: Colors.black,
+                                Container(
+                                  width: MediaQuery.of(context).size.width / 10,
+                                  height:
+                                      MediaQuery.of(context).size.height / 25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    //shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        '${e['imagePath']}',
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 Container(
                                   margin: const EdgeInsets.only(left: 20),

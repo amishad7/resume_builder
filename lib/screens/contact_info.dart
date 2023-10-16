@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+
 import 'package:resume_builder/Global/global.dart';
 
 class Contact_info extends StatefulWidget {
@@ -16,7 +16,7 @@ class Contact_info extends StatefulWidget {
 class _Contact_infoState extends State<Contact_info> {
   @override
   Widget build(BuildContext context) {
-    ImagePicker picker = ImagePicker();
+    // ImagePicker picker = ImagePicker();
 
     bool showImageOption = false;
     return Scaffold(
@@ -284,7 +284,12 @@ class _Contact_infoState extends State<Contact_info> {
                                         padding: const EdgeInsets.only(
                                             right: 15.0, left: 15),
                                         child: TextFormField(
-                                          onSaved: (val) {},
+                                          controller: TextEditingController(),
+                                          onSaved: (val) {
+                                            setState(() {
+                                              Global.name = val;
+                                            });
+                                          },
                                           cursorColor: Colors.grey,
                                           autocorrect: true,
                                           decoration: InputDecoration(
@@ -422,11 +427,20 @@ class _Contact_infoState extends State<Contact_info> {
                                     ),
                                   ],
                                 ),
-                                TextButton(
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 0.2,
+                                    backgroundColor: Global.backGroundColor,
+                                  ),
                                   onPressed: () {
                                     log("${Global.name}");
                                   },
-                                  child: const Text("Submit"),
+                                  child: Text(
+                                    "Submit",
+                                    style: TextStyle(
+                                      color: Global.appColor,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -459,12 +473,12 @@ class _Contact_infoState extends State<Contact_info> {
                                 CircleAvatar(
                                   backgroundColor: Global.TextColor,
                                   radius: 83,
-                                  backgroundImage: (Global.image == null)
-                                      ? NetworkImage(
-                                          'https://i.pinimg.com/564x/06/94/ef/0694ef0f25141d2fb24b45c55c22686c.jpg')
-                                      : Image.file(
-                                          File(Global.image!.path),
-                                        ).image,
+                                  // backgroundImage: (Global.image == null)
+                                  //     ? NetworkImage(
+                                  //         'https://i.pinimg.com/564x/06/94/ef/0694ef0f25141d2fb24b45c55c22686c.jpg')
+                                  //     : Image.file(
+                                  //         File(Global.image!.path),
+                                  //       ).image,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -474,11 +488,11 @@ class _Contact_infoState extends State<Contact_info> {
                                       radius: 34,
                                       backgroundColor: Colors.lightBlue,
                                       child: IconButton(
-                                        onPressed: () async {
-                                          Global.image = await picker.pickImage(
-                                            source: ImageSource.camera,
-                                          );
-                                          setState(() {});
+                                        onPressed: () {
+                                          // Global.image = await picker.pickImage(
+                                          //   source: ImageSource.camera,
+                                          // );
+                                          // setState(() {});
                                         },
                                         icon: const Icon(
                                           CupertinoIcons.photo_camera_solid,
@@ -490,11 +504,11 @@ class _Contact_infoState extends State<Contact_info> {
                                       radius: 34,
                                       backgroundColor: Colors.lightBlue,
                                       child: IconButton(
-                                        onPressed: () async {
-                                          Global.image = await picker.pickImage(
-                                            source: ImageSource.gallery,
-                                          );
-                                          setState(() {});
+                                        onPressed: () {
+                                          // Global.image = await picker.pickImage(
+                                          //   source: ImageSource.gallery,
+                                          // );
+                                          // setState(() {});
                                         },
                                         icon: const Icon(
                                           CupertinoIcons.photo,
