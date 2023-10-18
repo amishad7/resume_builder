@@ -26,7 +26,7 @@ class _Experience_State extends State<Experience_> {
         toolbarHeight: 100,
         backgroundColor: Global.appColor,
         title: Text(
-          "Education",
+          "Experience",
           style: TextStyle(
             color: Global.TextColor,
           ),
@@ -44,14 +44,15 @@ class _Experience_State extends State<Experience_> {
         color: Colors.indigo.shade50,
         height: double.infinity,
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 23),
+        padding: const EdgeInsets.symmetric(vertical: 23),
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 23),
+                margin: const EdgeInsets.only(top: 23),
                 padding: const EdgeInsets.only(left: 23, top: 23, bottom: 20),
-                height: MediaQuery.of(context).size.height / 1.5,
+                height: MediaQuery.of(context).size.height / 1.9,
                 width: MediaQuery.of(context).size.width / 1.1,
                 decoration: const BoxDecoration(
                   color: Colors.white70,
@@ -64,7 +65,7 @@ class _Experience_State extends State<Experience_> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Course/Degree",
+                      "Company Name",
                       style: TextStyle(
                         fontSize: 23,
                         color: Colors.blueAccent,
@@ -75,7 +76,7 @@ class _Experience_State extends State<Experience_> {
                       padding: const EdgeInsets.only(right: 45),
                       child: TextFormField(
                         decoration: const InputDecoration(
-                          hintText: 'B. Tech Information Technology',
+                          hintText: 'New Enterprise, San Francisco',
                           hintStyle: TextStyle(color: Colors.grey),
                         ),
                       ),
@@ -92,13 +93,13 @@ class _Experience_State extends State<Experience_> {
                       padding: const EdgeInsets.only(right: 45),
                       child: TextFormField(
                         decoration: const InputDecoration(
-                          hintText: 'Bhagavan Mahavir University',
+                          hintText: 'Quality Test Engineer',
                           hintStyle: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ),
                     const Text(
-                      "School/College/Institute",
+                      "Roles (optional)",
                       style: TextStyle(
                         fontSize: 23,
                         color: Colors.blueAccent,
@@ -109,29 +110,152 @@ class _Experience_State extends State<Experience_> {
                       padding: const EdgeInsets.only(right: 45),
                       child: TextFormField(
                         decoration: const InputDecoration(
-                          hintText: '70% (or) 7.0 CGPA',
-                          hintStyle: TextStyle(color: Colors.grey),
-                        ),
-                      ),
-                    ),
-                    const Text(
-                      "Year Of Pass",
-                      style: TextStyle(
-                        fontSize: 23,
-                        color: Colors.blueAccent,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 45),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: '2023',
+                          hintText:
+                              'Working with team members to come up with new concepts and product analysis..',
                           hintStyle: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 23),
+                padding: const EdgeInsets.only(left: 23, top: 23, bottom: 20),
+                height: MediaQuery.of(context).size.height / 4.9,
+                width: MediaQuery.of(context).size.width / 1.1,
+                decoration: const BoxDecoration(
+                  color: Colors.white70,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Employed status",
+                      style: TextStyle(
+                        fontSize: 23,
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Radio(
+                          value: 'Previously Employed',
+                          activeColor: Global.appColor,
+                          groupValue: Global.isValue,
+                          onChanged: (val) {
+                            Global.isValue = val;
+                          },
+                        ),
+                        Text("Previously Employed"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Radio(
+                          value: 'Currently Employed',
+                          activeColor: Global.appColor,
+                          groupValue: Global.isValue,
+                          onChanged: (val) {
+                            Global.isValue = val;
+                          },
+                        ),
+                        Text("Currently Employed"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      margin:
+                          const EdgeInsets.only(top: 10, right: 20, left: 20),
+                      padding: EdgeInsets.all(20),
+                      height: MediaQuery.of(context).size.height / 4.9,
+                      width: MediaQuery.of(context).size.width / 1.1,
+                      decoration: const BoxDecoration(
+                        color: Colors.white70,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Date Joined',
+                            style: TextStyle(
+                              fontSize: 23,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              right: 170.0,
+                            ),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                hintText: 'DD/MM/YY',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10, right: 20),
+                      padding: EdgeInsets.all(20),
+                      height: MediaQuery.of(context).size.height / 4.9,
+                      width: MediaQuery.of(context).size.width / 1.1,
+                      decoration: const BoxDecoration(
+                        color: Colors.white70,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Date Exit',
+                            style: TextStyle(
+                              fontSize: 23,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              right: 170.0,
+                            ),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                hintText: 'DD/MM/YY',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Save",
+                  style: TextStyle(color: Colors.blue),
                 ),
               ),
             ],

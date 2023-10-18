@@ -11,6 +11,8 @@ class Global {
   static String? Address;
   static String? MarritalValue;
 
+  static String? isValue;
+
   static bool ishindi = false;
   static bool isEnglish = false;
   static bool isGujarati = false;

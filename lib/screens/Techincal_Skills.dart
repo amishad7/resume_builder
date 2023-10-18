@@ -42,35 +42,19 @@ class _Technical_skillsState extends State<Technical_skills> {
       backgroundColor: Colors.indigo.shade50,
       body: Column(
         children: [
-          Container(
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.shade50,
-                  spreadRadius: 1,
-                  blurRadius: 23,
-                  offset: Offset(2, 2),
-                ),
-              ],
-              color: Colors.white,
-              borderRadius: BorderRadius.all(
-                Radius.circular(34),
-              ),
-            ),
-            height: MediaQuery.of(context).size.height / 19,
-            width: MediaQuery.of(context).size.width / 2,
+          SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+            onPressed: () {},
             child: Text(
-              "Add your skills",
+              "Fill Up Your Skills",
               style: TextStyle(
-                color: Global.appColor,
-                fontSize: 23,
-                fontWeight: FontWeight.w600,
-                letterSpacing: -1.3,
+                color: Global.TextColor,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
+          SizedBox(height: 10),
           Container(
             margin:
                 const EdgeInsets.only(top: 12, left: 19, right: 19, bottom: 23),
@@ -88,9 +72,6 @@ class _Technical_skillsState extends State<Technical_skills> {
               borderRadius: const BorderRadius.all(
                 Radius.circular(12),
               ),
-            ),
-            child: Column(
-              children: [],
             ),
           ),
         ],
